@@ -34,6 +34,7 @@ def find_large_added_files(filenames, maxkb):
     filenames = (added_files() & set(filenames)) - lfs_files()
 
     retv = 0
+    
     for filename in filenames:
         kb = int(math.ceil(os.stat(filename).st_size / 1024))
         if kb > maxkb:
@@ -55,6 +56,7 @@ def main(argv=None):  # type: (Optional[Sequence[str]]) -> int
     )
 
     args = parser.parse_args(argv)
+    print(args.filenames)
     return find_large_added_files(args.filenames, args.maxkb)
 
 
