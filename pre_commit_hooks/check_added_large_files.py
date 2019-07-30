@@ -32,6 +32,8 @@ def find_large_added_files(filenames, maxkb):
     # Find all added files that are also in the list of files pre-commit tells
     # us about
     filenames = (added_files() & set(filenames)) - lfs_files()
+    
+    print(filenames)
 
     retv = 0
     
