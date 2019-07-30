@@ -31,6 +31,7 @@ def find_large_added_files(filenames, maxkb):
     # type: (Iterable[str], int) -> int
     # Find all added files that are also in the list of files pre-commit tells
     # us about
+    print(lfs_files())
     filenames = (added_files() & set(filenames)) - lfs_files()
     
     print(filenames)
