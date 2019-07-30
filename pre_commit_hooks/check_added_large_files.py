@@ -33,8 +33,6 @@ def find_large_added_files(filenames, maxkb):
     # us about
     print(lfs_files())
     print(added_files())
-    filenames = (added_files() & set(filenames)) - lfs_files()
-    
     print(filenames)
 
     retv = 0
